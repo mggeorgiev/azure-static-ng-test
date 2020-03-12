@@ -15,9 +15,11 @@ steps:
   inputs:
     command: 'install'
     workingDir: '.'
-
+    
 - task: Npm@1
+  displayName: 'npm custom'
   inputs:
-    command: 'npm custom'
-    workingDir: '.'
+    command: custom
+    workingDir: .
+    verbose: false
     customCommand: 'run build'
