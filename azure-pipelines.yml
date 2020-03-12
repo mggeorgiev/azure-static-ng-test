@@ -18,6 +18,6 @@ steps:
 
 - task: Npm@1
   inputs:
-    command: 'custom'
+    command: 'npm custom'
     workingDir: '.'
-    customCommand: 'ng build'
+    customCommand: 'run build'
