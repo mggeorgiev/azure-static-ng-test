@@ -26,17 +26,8 @@ steps:
 
 - task: AzureFileCopy@4
   inputs:
-    SourcePath: dist/static
+    SourcePath: ./dist/static
     azureSubscription: 'Pay-As-You-Go(5ee3ae09-abba-403a-95ab-55ffcfd83190)'
     Destination: 'AzureBlob'
     storage: 'ngmg'
-    ContainerName: '$web'
-
-- task: AzureFileCopy@2
-  displayName: 'AzureBlob File Copy'
-  inputs:
-    SourcePath: ./dist/AngularDemo
-    azureSubscription: 'Pay-As-You-Go(5ee3ae09-abba-403a-95ab-55ffcfd83190)'
-    Destination: AzureBlob
-    storage: ngmg
     ContainerName: '$web'
