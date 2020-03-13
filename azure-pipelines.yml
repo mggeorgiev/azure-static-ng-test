@@ -31,3 +31,4 @@ steps:
     Destination: 'AzureBlob'
     storage: 'ngmg'
     ContainerName: '$web'
+
