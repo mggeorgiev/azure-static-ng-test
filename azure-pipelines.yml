@@ -32,8 +32,15 @@ steps:
 #    storage: 'ngmg'
 #    ContainerName: '$web'
 
-- task: CopyFiles@2
+#- task: CopyFiles@2
+#  inputs:
+#    SourceFolder: 'dist/static'
+#    Contents: '**'
+#    TargetFolder: '$web'
+
+- task: AzureCLI@2
   inputs:
-    SourceFolder: 'dist/static'
-    Contents: '**'
-    TargetFolder: '$web'
+    azureSubscription: 'Pay-As-You-Go(5ee3ae09-abba-403a-95ab-55ffcfd83190)'
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: 'az storage blob upload-batch — account-name ngmg account-key sEL4D/7RrFJgB3LNQ6t63okg4ENnErOKmdcVeghBsjDVMV6tetaXm95g9uxDalZMPPYilur66xkL2I5u01ySBg== — destination ‘$web’ — source ./'
